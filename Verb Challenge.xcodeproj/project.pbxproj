@@ -16,6 +16,10 @@
 		B640261A23D1C98400F107CD /* PMJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B640261723D1C98400F107CD /* PMJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B640261B23D1C98400F107CD /* PMHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B640261823D1C98400F107CD /* PMHTTP.framework */; };
 		B640261C23D1C98400F107CD /* PMHTTP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B640261823D1C98400F107CD /* PMHTTP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B640262323D1CA0000F107CD /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B640262223D1CA0000F107CD /* NetworkLayer.swift */; };
+		B640262523D1CA0E00F107CD /* ServerRequestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B640262423D1CA0E00F107CD /* ServerRequestConfig.swift */; };
+		B640262723D1CA1600F107CD /* ServerRequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B640262623D1CA1600F107CD /* ServerRequestMaker.swift */; };
+		B640262C23D1CCA100F107CD /* Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = B640262B23D1CCA100F107CD /* Flickr.swift */; };
 		B682EF8623D1BC0D00F4F50D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF8523D1BC0D00F4F50D /* AppDelegate.swift */; };
 		B682EF8823D1BC0D00F4F50D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF8723D1BC0D00F4F50D /* SceneDelegate.swift */; };
 		B682EF8A23D1BC0D00F4F50D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF8923D1BC0D00F4F50D /* HomeViewController.swift */; };
@@ -56,6 +60,10 @@
 		B640261223D1C6CA00F107CD /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		B640261723D1C98400F107CD /* PMJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PMJSON.framework; path = Carthage/Build/iOS/PMJSON.framework; sourceTree = "<group>"; };
 		B640261823D1C98400F107CD /* PMHTTP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PMHTTP.framework; path = Carthage/Build/iOS/PMHTTP.framework; sourceTree = "<group>"; };
+		B640262223D1CA0000F107CD /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		B640262423D1CA0E00F107CD /* ServerRequestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRequestConfig.swift; sourceTree = "<group>"; };
+		B640262623D1CA1600F107CD /* ServerRequestMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRequestMaker.swift; sourceTree = "<group>"; };
+		B640262B23D1CCA100F107CD /* Flickr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flickr.swift; sourceTree = "<group>"; };
 		B682EF8223D1BC0D00F4F50D /* Verb Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Verb Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B682EF8523D1BC0D00F4F50D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B682EF8723D1BC0D00F4F50D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +124,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B640261E23D1C9C400F107CD /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				B640262A23D1CC8E00F107CD /* Flickr */,
+				B640261F23D1C9D600F107CD /* NetworkLayer */,
+				B640262023D1C9E900F107CD /* RequestConfig */,
+				B640262123D1C9F100F107CD /* RequestMaker */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		B640261F23D1C9D600F107CD /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				B640262223D1CA0000F107CD /* NetworkLayer.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		B640262023D1C9E900F107CD /* RequestConfig */ = {
+			isa = PBXGroup;
+			children = (
+				B640262423D1CA0E00F107CD /* ServerRequestConfig.swift */,
+			);
+			path = RequestConfig;
+			sourceTree = "<group>";
+		};
+		B640262123D1C9F100F107CD /* RequestMaker */ = {
+			isa = PBXGroup;
+			children = (
+				B640262623D1CA1600F107CD /* ServerRequestMaker.swift */,
+			);
+			path = RequestMaker;
+			sourceTree = "<group>";
+		};
+		B640262A23D1CC8E00F107CD /* Flickr */ = {
+			isa = PBXGroup;
+			children = (
+				B640262B23D1CCA100F107CD /* Flickr.swift */,
+			);
+			path = Flickr;
+			sourceTree = "<group>";
+		};
 		B682EF7923D1BC0D00F4F50D = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				B640260523D1C12B00F107CD /* AppCoordinator */,
+				B640261E23D1C9C400F107CD /* Server */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -341,11 +393,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B640262323D1CA0000F107CD /* NetworkLayer.swift in Sources */,
 				B640260723D1C13500F107CD /* AppCoordinator.swift in Sources */,
+				B640262C23D1CCA100F107CD /* Flickr.swift in Sources */,
 				B682EF8A23D1BC0D00F4F50D /* HomeViewController.swift in Sources */,
+				B640262723D1CA1600F107CD /* ServerRequestMaker.swift in Sources */,
 				B682EF8623D1BC0D00F4F50D /* AppDelegate.swift in Sources */,
 				B640260A23D1C38900F107CD /* UIViewController+StoryboardInstantiation.swift in Sources */,
 				B682EF8823D1BC0D00F4F50D /* SceneDelegate.swift in Sources */,
+				B640262523D1CA0E00F107CD /* ServerRequestConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
