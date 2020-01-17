@@ -1,0 +1,31 @@
+{
+  "Mac" : [
+    {
+      "name" : "PMHTTP",
+      "hash" : "5798ba49d3bb8861555ea2c0c10d758365bb0d0704ce6833e6566f8effab2c09",
+      "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+    }
+  ],
+  "watchOS" : [
+    {
+      "name" : "PMHTTP",
+      "hash" : "b3938faf429b3584607dfb33348c7db56cb1eaadb3eb7d27baa98bafab7c57ee",
+      "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+    }
+  ],
+  "tvOS" : [
+    {
+      "name" : "PMHTTP",
+      "hash" : "178472f849454338e7969c889adc0a104789c17389dc81735ff46aec153cc55e",
+      "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+    }
+  ],
+  "commitish" : "v4.5.0",
+  "iOS" : [
+    {
+      "name" : "PMHTTP",
+      "hash" : "a6a50ed1ef8076bcc211ab0171fb15c3c04701bb6e80885e2bde44c79f51c84b",
+      "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+    }
+  ]
+}

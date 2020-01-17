@@ -3,12 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		B640260723D1C13500F107CD /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B640260623D1C13500F107CD /* AppCoordinator.swift */; };
 		B640260A23D1C38900F107CD /* UIViewController+StoryboardInstantiation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B640260923D1C38900F107CD /* UIViewController+StoryboardInstantiation.swift */; };
+		B640260D23D1C5E100F107CD /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B640260C23D1C5E100F107CD /* RxSwift */; };
+		B640260F23D1C5E100F107CD /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B640260E23D1C5E100F107CD /* RxCocoa */; };
+		B640261323D1C6CA00F107CD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B640261223D1C6CA00F107CD /* Localizable.strings */; };
+		B640261923D1C98400F107CD /* PMJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B640261723D1C98400F107CD /* PMJSON.framework */; };
+		B640261A23D1C98400F107CD /* PMJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B640261723D1C98400F107CD /* PMJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B640261B23D1C98400F107CD /* PMHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B640261823D1C98400F107CD /* PMHTTP.framework */; };
+		B640261C23D1C98400F107CD /* PMHTTP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B640261823D1C98400F107CD /* PMHTTP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B682EF8623D1BC0D00F4F50D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF8523D1BC0D00F4F50D /* AppDelegate.swift */; };
 		B682EF8823D1BC0D00F4F50D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF8723D1BC0D00F4F50D /* SceneDelegate.swift */; };
 		B682EF8A23D1BC0D00F4F50D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF8923D1BC0D00F4F50D /* HomeViewController.swift */; };
@@ -28,9 +35,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B640261D23D1C98400F107CD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B640261A23D1C98400F107CD /* PMJSON.framework in Embed Frameworks */,
+				B640261C23D1C98400F107CD /* PMHTTP.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		B640260623D1C13500F107CD /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		B640260923D1C38900F107CD /* UIViewController+StoryboardInstantiation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+StoryboardInstantiation.swift"; sourceTree = "<group>"; };
+		B640261223D1C6CA00F107CD /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		B640261723D1C98400F107CD /* PMJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PMJSON.framework; path = Carthage/Build/iOS/PMJSON.framework; sourceTree = "<group>"; };
+		B640261823D1C98400F107CD /* PMHTTP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PMHTTP.framework; path = Carthage/Build/iOS/PMHTTP.framework; sourceTree = "<group>"; };
 		B682EF8223D1BC0D00F4F50D /* Verb Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Verb Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B682EF8523D1BC0D00F4F50D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B682EF8723D1BC0D00F4F50D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +74,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B640260F23D1C5E100F107CD /* RxCocoa in Frameworks */,
+				B640261B23D1C98400F107CD /* PMHTTP.framework in Frameworks */,
+				B640260D23D1C5E100F107CD /* RxSwift in Frameworks */,
+				B640261923D1C98400F107CD /* PMJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,12 +107,22 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		B640261623D1C98400F107CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B640261823D1C98400F107CD /* PMHTTP.framework */,
+				B640261723D1C98400F107CD /* PMJSON.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B682EF7923D1BC0D00F4F50D = {
 			isa = PBXGroup;
 			children = (
 				B682EF8423D1BC0D00F4F50D /* Verb Challenge */,
 				B682EF9B23D1BC0F00F4F50D /* Verb ChallengeTests */,
 				B682EF8323D1BC0D00F4F50D /* Products */,
+				B640261623D1C98400F107CD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				B682EF8E23D1BC0E00F4F50D /* Assets.xcassets */,
+				B640261223D1C6CA00F107CD /* Localizable.strings */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -180,12 +220,17 @@
 				B682EF7F23D1BC0D00F4F50D /* Frameworks */,
 				B682EF8023D1BC0D00F4F50D /* Resources */,
 				B682EFA723D1BD5B00F4F50D /* Run Swiftlint */,
+				B640261D23D1C98400F107CD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Verb Challenge";
+			packageProductDependencies = (
+				B640260C23D1C5E100F107CD /* RxSwift */,
+				B640260E23D1C5E100F107CD /* RxCocoa */,
+			);
 			productName = "Verb Challenge";
 			productReference = B682EF8223D1BC0D00F4F50D /* Verb Challenge.app */;
 			productType = "com.apple.product-type.application";
@@ -236,6 +281,9 @@
 				Base,
 			);
 			mainGroup = B682EF7923D1BC0D00F4F50D;
+			packageReferences = (
+				B640260B23D1C5E100F107CD /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = B682EF8323D1BC0D00F4F50D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -252,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B682EFAF23D1BEFD00F4F50D /* HomeViewController.storyboard in Resources */,
+				B640261323D1C6CA00F107CD /* Localizable.strings in Resources */,
 				B682EF9223D1BC0E00F4F50D /* LaunchScreen.storyboard in Resources */,
 				B682EF8F23D1BC0E00F4F50D /* Assets.xcassets in Resources */,
 			);
@@ -450,6 +499,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U57454R4FC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Verb Challenge/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -468,6 +521,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U57454R4FC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Verb Challenge/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -555,6 +612,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B640260B23D1C5E100F107CD /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B640260C23D1C5E100F107CD /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B640260B23D1C5E100F107CD /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		B640260E23D1C5E100F107CD /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B640260B23D1C5E100F107CD /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B682EF7A23D1BC0D00F4F50D /* Project object */;
 }

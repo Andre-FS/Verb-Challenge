@@ -13,7 +13,18 @@ class HomeViewController: UIViewController {
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        setup()
+        
+    }
+    
+    
+    // MARK: - Private
+    
+    private func setup() {
+        self.title = NSLocalizedString("Home.Title", comment: "")
     }
 
 }
