@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		B682EF8623D1BC0D00F4F50D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF8523D1BC0D00F4F50D /* AppDelegate.swift */; };
 		B682EF8823D1BC0D00F4F50D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF8723D1BC0D00F4F50D /* SceneDelegate.swift */; };
-		B682EF8A23D1BC0D00F4F50D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF8923D1BC0D00F4F50D /* ViewController.swift */; };
-		B682EF8D23D1BC0D00F4F50D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B682EF8B23D1BC0D00F4F50D /* Main.storyboard */; };
+		B682EF8A23D1BC0D00F4F50D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF8923D1BC0D00F4F50D /* HomeViewController.swift */; };
 		B682EF8F23D1BC0E00F4F50D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B682EF8E23D1BC0E00F4F50D /* Assets.xcassets */; };
 		B682EF9223D1BC0E00F4F50D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B682EF9023D1BC0E00F4F50D /* LaunchScreen.storyboard */; };
 		B682EF9D23D1BC0F00F4F50D /* Verb_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF9C23D1BC0F00F4F50D /* Verb_ChallengeTests.swift */; };
+		B682EFAF23D1BEFD00F4F50D /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B682EFAE23D1BEFD00F4F50D /* HomeViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,14 +30,14 @@
 		B682EF8223D1BC0D00F4F50D /* Verb Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Verb Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B682EF8523D1BC0D00F4F50D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B682EF8723D1BC0D00F4F50D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B682EF8923D1BC0D00F4F50D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B682EF8C23D1BC0D00F4F50D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B682EF8923D1BC0D00F4F50D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B682EF8E23D1BC0E00F4F50D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B682EF9123D1BC0E00F4F50D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B682EF9323D1BC0E00F4F50D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B682EF9823D1BC0F00F4F50D /* Verb ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Verb ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B682EF9C23D1BC0F00F4F50D /* Verb_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verb_ChallengeTests.swift; sourceTree = "<group>"; };
 		B682EF9E23D1BC0F00F4F50D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B682EFAE23D1BEFD00F4F50D /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +79,11 @@
 		B682EF8423D1BC0D00F4F50D /* Verb Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				B682EF8523D1BC0D00F4F50D /* AppDelegate.swift */,
-				B682EF8723D1BC0D00F4F50D /* SceneDelegate.swift */,
-				B682EF8923D1BC0D00F4F50D /* ViewController.swift */,
-				B682EF8B23D1BC0D00F4F50D /* Main.storyboard */,
-				B682EF8E23D1BC0E00F4F50D /* Assets.xcassets */,
-				B682EF9023D1BC0E00F4F50D /* LaunchScreen.storyboard */,
-				B682EF9323D1BC0E00F4F50D /* Info.plist */,
+				B682EFAC23D1BE5900F4F50D /* Assets */,
+				B682EFA923D1BE3B00F4F50D /* Components */,
+				B682EFAA23D1BE4000F4F50D /* Extensions */,
+				B682EFA823D1BE3500F4F50D /* Support Files */,
+				B682EFAB23D1BE4400F4F50D /* ViewControllers */,
 			);
 			path = "Verb Challenge";
 			sourceTree = "<group>";
@@ -97,6 +95,56 @@
 				B682EF9E23D1BC0F00F4F50D /* Info.plist */,
 			);
 			path = "Verb ChallengeTests";
+			sourceTree = "<group>";
+		};
+		B682EFA823D1BE3500F4F50D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B682EF8523D1BC0D00F4F50D /* AppDelegate.swift */,
+				B682EF9323D1BC0E00F4F50D /* Info.plist */,
+				B682EF9023D1BC0E00F4F50D /* LaunchScreen.storyboard */,
+				B682EF8723D1BC0D00F4F50D /* SceneDelegate.swift */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		B682EFA923D1BE3B00F4F50D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B682EFAA23D1BE4000F4F50D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B682EFAB23D1BE4400F4F50D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B682EFAD23D1BE6400F4F50D /* Home */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B682EFAC23D1BE5900F4F50D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B682EF8E23D1BC0E00F4F50D /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		B682EFAD23D1BE6400F4F50D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B682EFAE23D1BEFD00F4F50D /* HomeViewController.storyboard */,
+				B682EF8923D1BC0D00F4F50D /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,9 +229,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B682EFAF23D1BEFD00F4F50D /* HomeViewController.storyboard in Resources */,
 				B682EF9223D1BC0E00F4F50D /* LaunchScreen.storyboard in Resources */,
 				B682EF8F23D1BC0E00F4F50D /* Assets.xcassets in Resources */,
-				B682EF8D23D1BC0D00F4F50D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,7 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B682EF8A23D1BC0D00F4F50D /* ViewController.swift in Sources */,
+				B682EF8A23D1BC0D00F4F50D /* HomeViewController.swift in Sources */,
 				B682EF8623D1BC0D00F4F50D /* AppDelegate.swift in Sources */,
 				B682EF8823D1BC0D00F4F50D /* SceneDelegate.swift in Sources */,
 			);
@@ -247,14 +295,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B682EF8B23D1BC0D00F4F50D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B682EF8C23D1BC0D00F4F50D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B682EF9023D1BC0E00F4F50D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -386,7 +426,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U57454R4FC;
-				INFOPLIST_FILE = "Verb Challenge/Info.plist";
+				INFOPLIST_FILE = "Verb Challenge/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -404,7 +444,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U57454R4FC;
-				INFOPLIST_FILE = "Verb Challenge/Info.plist";
+				INFOPLIST_FILE = "Verb Challenge/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
