@@ -13,7 +13,13 @@ class AppCoordinator {
     // MARK: - Internal
     
     func startingViewController() -> UIViewController {
-        return HomeViewController()
+        
+        guard let homeViewController = HomeViewController.instantiateFromStoryboard() else {
+            fatalError("⚠️ AppCoordinator - Unable to instantiate HomeViewController")
+        }
+        
+        return homeViewController
+        
     }
     
 }

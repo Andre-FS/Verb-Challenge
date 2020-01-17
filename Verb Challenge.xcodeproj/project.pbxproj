@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B640260723D1C13500F107CD /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B640260623D1C13500F107CD /* AppCoordinator.swift */; };
+		B640260A23D1C38900F107CD /* UIViewController+StoryboardInstantiation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B640260923D1C38900F107CD /* UIViewController+StoryboardInstantiation.swift */; };
 		B682EF8623D1BC0D00F4F50D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF8523D1BC0D00F4F50D /* AppDelegate.swift */; };
 		B682EF8823D1BC0D00F4F50D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF8723D1BC0D00F4F50D /* SceneDelegate.swift */; };
 		B682EF8A23D1BC0D00F4F50D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF8923D1BC0D00F4F50D /* HomeViewController.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		B640260623D1C13500F107CD /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		B640260923D1C38900F107CD /* UIViewController+StoryboardInstantiation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+StoryboardInstantiation.swift"; sourceTree = "<group>"; };
 		B682EF8223D1BC0D00F4F50D /* Verb Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Verb Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B682EF8523D1BC0D00F4F50D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B682EF8723D1BC0D00F4F50D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,14 @@
 				B640260623D1C13500F107CD /* AppCoordinator.swift */,
 			);
 			path = AppCoordinator;
+			sourceTree = "<group>";
+		};
+		B640260823D1C37500F107CD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B640260923D1C38900F107CD /* UIViewController+StoryboardInstantiation.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		B682EF7923D1BC0D00F4F50D = {
@@ -129,6 +139,7 @@
 		B682EFAA23D1BE4000F4F50D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B640260823D1C37500F107CD /* ViewController */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -284,6 +295,7 @@
 				B640260723D1C13500F107CD /* AppCoordinator.swift in Sources */,
 				B682EF8A23D1BC0D00F4F50D /* HomeViewController.swift in Sources */,
 				B682EF8623D1BC0D00F4F50D /* AppDelegate.swift in Sources */,
+				B640260A23D1C38900F107CD /* UIViewController+StoryboardInstantiation.swift in Sources */,
 				B682EF8823D1BC0D00F4F50D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
