@@ -1,5 +1,5 @@
 //
-//  PhotoBucket.swift
+//  FlickrPhotoResponse.swift
 //  Verb Challenge
 //
 //  Created on 17/01/2020.
@@ -8,16 +8,16 @@
 
 import Foundation
 
-struct PhotoBucket: Decodable {
+struct FlickrPhotoResponse: Decodable {
     
     // MARK: - Properties
     
-    var photos: PhotoBucketPage
+    var photos: FlickrPhotoPage
     var stat: String
     
 }
 
-struct PhotoBucketPage: Decodable {
+struct FlickrPhotoPage: Decodable {
     
     // MARK: - Properties
     

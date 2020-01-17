@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,36 +16,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQr-x3-8bV">
-                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yA3-Vz-3tS">
-                                <rect key="frame" x="184" y="473.5" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="updateButtonDidTap:" destination="Nnh-RK-896" eventType="touchUpInside" id="fEU-6o-A1b"/>
-                                </connections>
-                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rwG-1g-CGE">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="NsC-AA-Lqz">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="pkO-3Q-L6g">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" name="ActivityIndicatorColor"/>
+                            </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.099031690140845077" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="yA3-Vz-3tS" firstAttribute="centerX" secondItem="99p-zr-WM7" secondAttribute="centerX" id="4R4-XC-1il"/>
-                            <constraint firstItem="yA3-Vz-3tS" firstAttribute="top" secondItem="FQr-x3-8bV" secondAttribute="bottom" constant="15" id="Yba-KU-pTM"/>
-                            <constraint firstItem="FQr-x3-8bV" firstAttribute="centerX" secondItem="99p-zr-WM7" secondAttribute="centerX" id="aDj-Jx-r3x"/>
-                            <constraint firstItem="FQr-x3-8bV" firstAttribute="centerY" secondItem="99p-zr-WM7" secondAttribute="centerY" id="pgg-XK-utn"/>
+                            <constraint firstItem="rwG-1g-CGE" firstAttribute="top" secondItem="mLZ-VN-lkN" secondAttribute="top" id="Ohx-Bg-iE2"/>
+                            <constraint firstItem="mLZ-VN-lkN" firstAttribute="trailing" secondItem="rwG-1g-CGE" secondAttribute="trailing" id="Uzr-G3-Jhe"/>
+                            <constraint firstItem="pkO-3Q-L6g" firstAttribute="centerX" secondItem="99p-zr-WM7" secondAttribute="centerX" id="Xqu-le-sjf"/>
+                            <constraint firstAttribute="bottom" secondItem="rwG-1g-CGE" secondAttribute="bottom" id="fBv-eV-obK"/>
+                            <constraint firstItem="pkO-3Q-L6g" firstAttribute="centerY" secondItem="99p-zr-WM7" secondAttribute="centerY" id="kls-WW-cJe"/>
+                            <constraint firstItem="rwG-1g-CGE" firstAttribute="leading" secondItem="mLZ-VN-lkN" secondAttribute="leading" id="nyJ-tS-nqc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mLZ-VN-lkN"/>
                     </view>
                     <connections>
-                        <outlet property="statusLabel" destination="FQr-x3-8bV" id="TD2-TW-PDw"/>
+                        <outlet property="activityIndicator" destination="pkO-3Q-L6g" id="bq3-xq-SAY"/>
+                        <outlet property="collectionView" destination="rwG-1g-CGE" id="dP5-6A-M0i"/>
+                        <outlet property="collectionViewFlowLayout" destination="NsC-AA-Lqz" id="QFu-M9-uVe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mc-8L-MuY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-422" y="147"/>
+            <point key="canvasLocation" x="-42" y="28"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="ActivityIndicatorColor">
+            <color red="0.71897263601036276" green="0.71897263601036276" blue="0.71897263601036276" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
 </document>

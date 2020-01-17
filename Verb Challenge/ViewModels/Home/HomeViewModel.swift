@@ -16,7 +16,7 @@ class HomeViewModel {
     
     var networkLayer: NetworkLayer
     var homeService: HomeService
-    var homeData: PublishSubject<[Photo]> = PublishSubject()
+    var homeData: PublishSubject<[PhotoCellViewModel]> = PublishSubject()
     var dataStatus: PublishSubject<HomeDataState> = PublishSubject()
     
     var updateTask: HTTPManagerTask?
@@ -39,19 +39,30 @@ class HomeViewModel {
         self.updateTask?.cancel()
         self.updateTask = self.homeService.getRecentPhotos { [weak self] in
             
+            guard let self = self else {
+                return
+            }
+            
             switch $0 {
             case let .success(photos):
-                self?.homeData.onNext(photos)
-                self?.dataStatus.onNext(.success)
+                self.homeData.onNext(self.photoCellViewModels(from: photos))
+                self.dataStatus.onNext(.success)
                 
             case let .failure(error):
                 print(error)
-                self?.homeData.onNext([])
-                self?.dataStatus.onNext(.error)
+                self.homeData.onNext([])
+                self.dataStatus.onNext(.error)
             }
             
         }
         
+    }
+    
+    
+    // MARK: - Private
+    
+    private func photoCellViewModels(from photos: [Photo]) -> [PhotoCellViewModel] {
+        return photos.compactMap({ $0.url }).map { PhotoCellViewModel(url: $0) }
     }
     
 }

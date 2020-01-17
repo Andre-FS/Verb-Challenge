@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YRo-Gm-RF7">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photo Detail View Controller-->
+        <scene sceneID="tDk-11-8pM">
+            <objects>
+                <viewController id="YRo-Gm-RF7" customClass="PhotoDetailViewController" customModule="Verb_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iEP-8H-TN6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="diK-bg-LOj">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.099031690140000003" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="diK-bg-LOj" firstAttribute="top" secondItem="4Fx-q3-IDF" secondAttribute="top" id="Tr7-L6-Xdj"/>
+                            <constraint firstItem="diK-bg-LOj" firstAttribute="leading" secondItem="4Fx-q3-IDF" secondAttribute="leading" id="sna-Pu-VX5"/>
+                            <constraint firstItem="4Fx-q3-IDF" firstAttribute="bottom" secondItem="diK-bg-LOj" secondAttribute="bottom" id="wwO-5P-RTG"/>
+                            <constraint firstItem="4Fx-q3-IDF" firstAttribute="trailing" secondItem="diK-bg-LOj" secondAttribute="trailing" id="xoW-YE-P4R"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Fx-q3-IDF"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="diK-bg-LOj" id="EKy-yp-yrc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DHB-RS-ZH3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="48" y="141"/>
+        </scene>
+    </scenes>
+</document>

@@ -42,7 +42,7 @@ class HomeService {
                 do {
                     
                     let decoder = JSONDecoder()
-                    let model = try decoder.decode(PhotoBucket.self, from: data)
+                    let model = try decoder.decode(FlickrPhotoResponse.self, from: data)
                     
                     completion(.success(model.photos.photo))
                     
