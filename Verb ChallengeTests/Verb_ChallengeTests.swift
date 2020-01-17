@@ -2,7 +2,7 @@
 //  Verb_ChallengeTests.swift
 //  Verb ChallengeTests
 //
-//  Created by André Silva on 17/01/2020.
+//  Created on 17/01/2020.
 //  Copyright © 2020 André Silva. All rights reserved.
 //
 
