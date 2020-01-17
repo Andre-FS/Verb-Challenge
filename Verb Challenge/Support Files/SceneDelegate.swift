@@ -13,6 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // MARK: - Properties
     
     var window: UIWindow?
+    let coordinator = AppCoordinator()
 
     
     // MARK: - Internal
@@ -25,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         self.window = UIWindow(windowScene: windowScene)
         
-        self.window?.rootViewController = HomeViewController()
+        self.window?.rootViewController = self.coordinator.startingViewController()
         self.window?.makeKeyAndVisible()
         
     }

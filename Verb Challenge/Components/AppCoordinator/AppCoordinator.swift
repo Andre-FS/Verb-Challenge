@@ -2,8 +2,18 @@
 //  AppCoordinator.swift
 //  Verb Challenge
 //
-//  Created by André Silva on 17/01/2020.
+//  Created on 17/01/2020.
 //  Copyright © 2020 André Silva. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class AppCoordinator {
+ 
+    // MARK: - Internal
+    
+    func startingViewController() -> UIViewController {
+        return HomeViewController()
+    }
+    
+}
