@@ -109,6 +109,7 @@
 				B682EF7E23D1BC0D00F4F50D /* Sources */,
 				B682EF7F23D1BC0D00F4F50D /* Frameworks */,
 				B682EF8023D1BC0D00F4F50D /* Resources */,
+				B682EFA723D1BD5B00F4F50D /* Run Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -194,6 +195,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B682EFA723D1BD5B00F4F50D /* Run Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Swiftlint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B682EF7E23D1BC0D00F4F50D /* Sources */ = {
@@ -372,7 +394,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.asilva.Verb-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -390,7 +412,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.asilva.Verb-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
