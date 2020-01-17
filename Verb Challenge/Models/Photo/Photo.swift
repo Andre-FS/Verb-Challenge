@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Photo {
-    
+protocol Photo {
+    var url: URL? { get }
 }

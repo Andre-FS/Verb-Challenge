@@ -38,8 +38,17 @@ class HomeService {
             
             switch $0 {
             case let .success(data):
-                // TODO: convert to model
-                completion(.success([Photo()]))
+                
+                do {
+                    
+                    let decoder = JSONDecoder()
+                    let model = try decoder.decode(PhotoBucket.self, from: data)
+                    
+                    completion(.success(model.photos.photo))
+                    
+                } catch let jsonError {
+                    completion(.failure(jsonError))
+                }
                 
             case let .failure(error):
                 completion(.failure(error))

@@ -72,6 +72,13 @@ class HomeViewController: UIViewController {
             })
             .disposed(by: self.disposeBag)
         
+        self.viewModel.homeData
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { photos in
+                
+        })
+        .disposed(by: self.disposeBag)
+        
     }
 
     
