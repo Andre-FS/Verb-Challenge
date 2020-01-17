@@ -9,12 +9,17 @@
 import UIKit
 
 class AppCoordinator {
- 
+    
     // MARK: - Internal
     
     func startingViewController() -> UIViewController {
         
-        guard let homeViewController = HomeViewController.instantiateFromStoryboard() else {
+        let flickr = Flickr()
+        let networkLayer = NetworkLayer(hostname: flickr.hostname)
+        
+        guard let homeViewController = HomeViewController.instantiateFromStoryboard(creator: {
+            return HomeViewController(coder: $0, viewModel: HomeViewModel(networkLayer: networkLayer))
+        }) else {
             fatalError("⚠️ AppCoordinator - Unable to instantiate HomeViewController")
         }
         

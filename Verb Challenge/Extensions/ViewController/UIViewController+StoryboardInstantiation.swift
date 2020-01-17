@@ -12,12 +12,12 @@ extension UIViewController {
 
     // MARK: - Internal
     
-    static func instantiateFromStoryboard<T: UIViewController>() -> T? {
+    static func instantiateFromStoryboard<T: UIViewController>(creator: @escaping ((NSCoder) -> T?)) -> T? {
 
         let className = String(describing: self)
 
         if Bundle.main.path(forResource: className, ofType: "storyboardc") != nil {
-            return UIStoryboard(name: className, bundle: nil).instantiateInitialViewController()
+            return UIStoryboard(name: className, bundle: nil).instantiateInitialViewController(creator: creator)
         }
 
         return nil

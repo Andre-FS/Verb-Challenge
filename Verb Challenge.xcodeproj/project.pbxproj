@@ -20,6 +20,7 @@
 		B640262523D1CA0E00F107CD /* ServerRequestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B640262423D1CA0E00F107CD /* ServerRequestConfig.swift */; };
 		B640262723D1CA1600F107CD /* ServerRequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B640262623D1CA1600F107CD /* ServerRequestMaker.swift */; };
 		B640262C23D1CCA100F107CD /* Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = B640262B23D1CCA100F107CD /* Flickr.swift */; };
+		B640263123D1D2E500F107CD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B640263023D1D2E500F107CD /* HomeViewModel.swift */; };
 		B682EF8623D1BC0D00F4F50D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF8523D1BC0D00F4F50D /* AppDelegate.swift */; };
 		B682EF8823D1BC0D00F4F50D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF8723D1BC0D00F4F50D /* SceneDelegate.swift */; };
 		B682EF8A23D1BC0D00F4F50D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF8923D1BC0D00F4F50D /* HomeViewController.swift */; };
@@ -27,6 +28,8 @@
 		B682EF9223D1BC0E00F4F50D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B682EF9023D1BC0E00F4F50D /* LaunchScreen.storyboard */; };
 		B682EF9D23D1BC0F00F4F50D /* Verb_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF9C23D1BC0F00F4F50D /* Verb_ChallengeTests.swift */; };
 		B682EFAF23D1BEFD00F4F50D /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B682EFAE23D1BEFD00F4F50D /* HomeViewController.storyboard */; };
+		B69F60C323D1D45F006A4005 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F60C223D1D45F006A4005 /* HomeService.swift */; };
+		B69F60C823D1DF04006A4005 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F60C723D1DF04006A4005 /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,7 @@
 		B640262423D1CA0E00F107CD /* ServerRequestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRequestConfig.swift; sourceTree = "<group>"; };
 		B640262623D1CA1600F107CD /* ServerRequestMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRequestMaker.swift; sourceTree = "<group>"; };
 		B640262B23D1CCA100F107CD /* Flickr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flickr.swift; sourceTree = "<group>"; };
+		B640263023D1D2E500F107CD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B682EF8223D1BC0D00F4F50D /* Verb Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Verb Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B682EF8523D1BC0D00F4F50D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B682EF8723D1BC0D00F4F50D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 		B682EF9C23D1BC0F00F4F50D /* Verb_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verb_ChallengeTests.swift; sourceTree = "<group>"; };
 		B682EF9E23D1BC0F00F4F50D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B682EFAE23D1BEFD00F4F50D /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
+		B69F60C223D1D45F006A4005 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		B69F60C723D1DF04006A4005 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +173,22 @@
 			path = Flickr;
 			sourceTree = "<group>";
 		};
+		B640262E23D1D2CF00F107CD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B640262F23D1D2DC00F107CD /* Home */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B640262F23D1D2DC00F107CD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B640263023D1D2E500F107CD /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		B682EF7923D1BC0D00F4F50D = {
 			isa = PBXGroup;
 			children = (
@@ -192,8 +214,11 @@
 				B682EFAC23D1BE5900F4F50D /* Assets */,
 				B682EFA923D1BE3B00F4F50D /* Components */,
 				B682EFAA23D1BE4000F4F50D /* Extensions */,
+				B69F60C523D1DEF1006A4005 /* Models */,
+				B69F60C023D1D452006A4005 /* Service */,
 				B682EFA823D1BE3500F4F50D /* Support Files */,
 				B682EFAB23D1BE4400F4F50D /* ViewControllers */,
+				B640262E23D1D2CF00F107CD /* ViewModels */,
 			);
 			path = "Verb Challenge";
 			sourceTree = "<group>";
@@ -259,6 +284,38 @@
 				B682EF8923D1BC0D00F4F50D /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		B69F60C023D1D452006A4005 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B69F60C123D1D457006A4005 /* Home */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		B69F60C123D1D457006A4005 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B69F60C223D1D45F006A4005 /* HomeService.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B69F60C523D1DEF1006A4005 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B69F60C623D1DEF8006A4005 /* Photo */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B69F60C623D1DEF8006A4005 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				B69F60C723D1DF04006A4005 /* Photo.swift */,
+			);
+			path = Photo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,13 +450,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B69F60C823D1DF04006A4005 /* Photo.swift in Sources */,
 				B640262323D1CA0000F107CD /* NetworkLayer.swift in Sources */,
 				B640260723D1C13500F107CD /* AppCoordinator.swift in Sources */,
 				B640262C23D1CCA100F107CD /* Flickr.swift in Sources */,
+				B640263123D1D2E500F107CD /* HomeViewModel.swift in Sources */,
 				B682EF8A23D1BC0D00F4F50D /* HomeViewController.swift in Sources */,
 				B640262723D1CA1600F107CD /* ServerRequestMaker.swift in Sources */,
 				B682EF8623D1BC0D00F4F50D /* AppDelegate.swift in Sources */,
 				B640260A23D1C38900F107CD /* UIViewController+StoryboardInstantiation.swift in Sources */,
+				B69F60C323D1D45F006A4005 /* HomeService.swift in Sources */,
 				B682EF8823D1BC0D00F4F50D /* SceneDelegate.swift in Sources */,
 				B640262523D1CA0E00F107CD /* ServerRequestConfig.swift in Sources */,
 			);
