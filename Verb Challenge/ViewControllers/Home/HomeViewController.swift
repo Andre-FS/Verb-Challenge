@@ -30,6 +30,10 @@ class HomeViewController: UIViewController {
     let disposeBag = DisposeBag()
     weak var navigationDelegate: CoordinatorNavigationDelegate?
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
     
     // MARK: - Init
     

@@ -23,6 +23,10 @@ class PhotoDetailViewController: UIViewController {
     let viewModel: PhotoDetailViewModel
     weak var navigationDelegate: CoordinatorNavigationDelegate?
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .all
+    }
+    
     
     // MARK: - Init
     

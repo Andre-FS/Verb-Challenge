@@ -31,7 +31,7 @@ class AppCoordinator: CoordinatorNavigationDelegate {
             fatalError("⚠️ AppCoordinator - Unable to instantiate HomeViewController")
         }
         
-        self.navigationController = UINavigationController(rootViewController: homeViewController)
+        self.navigationController = CustomNavigationController(rootViewController: homeViewController)
         return navigationController
         
     }

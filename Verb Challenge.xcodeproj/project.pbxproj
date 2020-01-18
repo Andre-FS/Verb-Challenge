@@ -47,6 +47,7 @@
 		B68C70FC23D2477C00579BCD /* UIView+LoadFromNIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C70FB23D2477C00579BCD /* UIView+LoadFromNIB.swift */; };
 		B68C70FE23D2487B00579BCD /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C70FD23D2487B00579BCD /* UIView+Constraints.swift */; };
 		B68C710323D24C7A00579BCD /* TapFeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C710223D24C7A00579BCD /* TapFeedbackButton.swift */; };
+		B68F722B23D32953003CCCC0 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68F722A23D32953003CCCC0 /* CustomNavigationController.swift */; };
 		B69F60C323D1D45F006A4005 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F60C223D1D45F006A4005 /* HomeService.swift */; };
 		B69F60C823D1DF04006A4005 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F60C723D1DF04006A4005 /* Photo.swift */; };
 /* End PBXBuildFile section */
@@ -115,6 +116,7 @@
 		B68C70FB23D2477C00579BCD /* UIView+LoadFromNIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LoadFromNIB.swift"; sourceTree = "<group>"; };
 		B68C70FD23D2487B00579BCD /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		B68C710223D24C7A00579BCD /* TapFeedbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapFeedbackButton.swift; sourceTree = "<group>"; };
+		B68F722A23D32953003CCCC0 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		B69F60C223D1D45F006A4005 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		B69F60C723D1DF04006A4005 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -365,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				B640260523D1C12B00F107CD /* AppCoordinator */,
+				B68F722923D3293F003CCCC0 /* NavigationController */,
 				B68C70E823D223DD00579BCD /* PhotoStorage */,
 				B640261E23D1C9C400F107CD /* Server */,
 			);
@@ -456,6 +459,14 @@
 				B68C710223D24C7A00579BCD /* TapFeedbackButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		B68F722923D3293F003CCCC0 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				B68F722A23D32953003CCCC0 /* CustomNavigationController.swift */,
+			);
+			path = NavigationController;
 			sourceTree = "<group>";
 		};
 		B69F60C023D1D452006A4005 /* Service */ = {
@@ -644,6 +655,7 @@
 				B650295823D212C900B248B8 /* PhotoDetailViewController.swift in Sources */,
 				B68C70ED23D2256F00579BCD /* StorablePhoto.swift in Sources */,
 				B682EF8623D1BC0D00F4F50D /* AppDelegate.swift in Sources */,
+				B68F722B23D32953003CCCC0 /* CustomNavigationController.swift in Sources */,
 				B640260A23D1C38900F107CD /* UIViewController+StoryboardInstantiation.swift in Sources */,
 				B68C70FC23D2477C00579BCD /* UIView+LoadFromNIB.swift in Sources */,
 				B650294E23D204CF00B248B8 /* PhotoCell.swift in Sources */,
