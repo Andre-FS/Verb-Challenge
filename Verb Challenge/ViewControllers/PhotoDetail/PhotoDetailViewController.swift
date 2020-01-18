@@ -15,6 +15,7 @@ class PhotoDetailViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     
     // MARK: - Properties
@@ -53,11 +54,32 @@ class PhotoDetailViewController: UIViewController {
     
     private func setupUI() {
         
+        setupImageView()
+        setupScrollView()
+        
+    }
+    
+    private func setupImageView() {
+        
         guard let photoURL = self.viewModel.photo.url else {
             return
         }
         
         Nuke.loadImage(with: photoURL, into: self.imageView)
+        
+    }
+    
+    private func setupScrollView() {
+        
+        self.scrollView.decelerationRate = UIScrollView.DecelerationRate.fast
+        self.scrollView.maximumZoomScale = 3
+        self.scrollView.minimumZoomScale = 1
+        self.scrollView.zoomScale = 1
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        tapRecognizer.numberOfTapsRequired = 2
+        
+        self.scrollView.addGestureRecognizer(tapRecognizer)
         
     }
     
@@ -81,6 +103,27 @@ class PhotoDetailViewController: UIViewController {
             
         }
             
+    }
+    
+    // MARK: - Private
+    
+    @objc
+    private func handleTap() {
+        
+        if self.scrollView.zoomScale > self.scrollView.minimumZoomScale {
+            self.scrollView.setZoomScale(self.scrollView.minimumZoomScale, animated: true)
+        } else {
+            self.scrollView.setZoomScale((self.scrollView.minimumZoomScale + self.scrollView.maximumZoomScale) / 2, animated: true)
+        }
+        
+    }
+    
+}
+
+extension PhotoDetailViewController: UIScrollViewDelegate {
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return self.imageView
     }
     
 }
