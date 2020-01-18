@@ -20,13 +20,15 @@ class PhotoDetailViewController: UIViewController {
     // MARK: - Properties
     
     let viewModel: PhotoDetailViewModel
+    weak var navigationDelegate: CoordinatorNavigationDelegate?
     
     
     // MARK: - Init
     
-    init?(coder: NSCoder, viewModel: PhotoDetailViewModel) {
+    init?(coder: NSCoder, viewModel: PhotoDetailViewModel, navigationDelegate: CoordinatorNavigationDelegate) {
         
         self.viewModel = viewModel
+        self.navigationDelegate = navigationDelegate
         super.init(coder: coder)
         
     }
@@ -43,13 +45,42 @@ class PhotoDetailViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+        setupShareAction()
         
     }
     
     // MARK: - Private
     
     private func setupUI() {
-        Nuke.loadImage(with: self.viewModel.photoModel.url, into: self.imageView)
+        
+        guard let photoURL = self.viewModel.photo.url else {
+            return
+        }
+        
+        Nuke.loadImage(with: photoURL, into: self.imageView)
+        
+    }
+    
+    private func setupShareAction() {
+        
+        let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(photoDidLongPress))
+        self.imageView.addGestureRecognizer(gestureRecognizer)
+        
+    }
+    
+    
+    // MARK: - Actions
+    
+    @objc
+    func photoDidLongPress(_ sender: UIGestureRecognizer) {
+        
+        if sender.state == .began {
+            
+            UINotificationFeedbackGenerator().notificationOccurred(.success)
+            self.navigationDelegate?.share(photo: self.viewModel.photo, from: self)
+            
+        }
+            
     }
     
 }

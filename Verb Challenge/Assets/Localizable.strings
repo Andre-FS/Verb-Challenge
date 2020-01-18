@@ -7,3 +7,4 @@
 */
 
 "Home.Title" = "Home";
+"Home.OfflineIndicator.Text" = "You're offine. Tap to retry.";

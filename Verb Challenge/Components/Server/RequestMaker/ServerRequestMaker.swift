@@ -17,18 +17,20 @@ class ServerRequestMaker {
     
     func request(configuration: ServerRequestConfig, completionHandler: @escaping ServerResponseHandler) -> HTTPManagerTask {
         
-        let task = HTTP.request(GET: configuration.path, parameters: configuration.parameters)
-            .performRequest(withCompletionQueue: .main) { _, result in
-                switch result {
-                case let .success(_, data):
-                    completionHandler(.success(data))
-                    
-                case let .error(_, error):
-                    completionHandler(.failure(error))
-                    
-                case .canceled:
-                    break
-                }
+        let request = HTTP.request(GET: configuration.path, parameters: configuration.parameters)!
+        request.timeoutInterval = 10
+        
+        let task = request.performRequest(withCompletionQueue: .main) { _, result in
+            switch result {
+            case let .success(_, data):
+                completionHandler(.success(data))
+                
+            case let .error(_, error):
+                completionHandler(.failure(error))
+                
+            case .canceled:
+                break
+            }
         }
         
         return task

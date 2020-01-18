@@ -14,6 +14,12 @@ class PhotoCell: BaseCell {
     // MARK: - Outlets
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var actionButton: UIButton!
+    
+    
+    // MARK: - Properties
+    
+    weak var delegate: PhotoCellActionDelegate?
     
     
     // MARK: - Life Cycle
@@ -21,14 +27,20 @@ class PhotoCell: BaseCell {
     override func awakeFromNib() {
         
         super.awakeFromNib()
+        setupGestureRecognizer()
         
+    }
+    
+    override func prepareForReuse() {
+        
+        super.prepareForReuse()
         Nuke.cancelRequest(for: self.imageView)
         
     }
     
     // MARK: - Internal
     
-    override func setupWithContent(_ content: Any, animated: Bool = false) {
+    override func setupWithContent(_ content: Any) {
         
         super.setupWithContent(content)
         
@@ -64,9 +76,46 @@ class PhotoCell: BaseCell {
         Nuke.loadImage(with: model.url, options: options, into: self.imageView)
         
     }
+    
+    private func setupGestureRecognizer() {
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(cellDidTap))
+        self.actionButton.addGestureRecognizer(tapRecognizer)
+        
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(cellDidLongPress))
+        self.actionButton.addGestureRecognizer(longPressGesture)
+        
+    }
+    
 
+    // MARK: - Actions
+    
+    @objc
+    func cellDidTap() {
+        self.delegate?.didTap(on: self)
+    }
+    
+    @objc
+    func cellDidLongPress(_ sender: UIGestureRecognizer) {
+        
+        if sender.state == .began {
+            
+            UINotificationFeedbackGenerator().notificationOccurred(.success)
+            self.delegate?.didLongPress(on: self)
+            
+        }
+        
+    }
+    
 }
 
 struct PhotoCellViewModel {
     var url: URL
+}
+
+protocol PhotoCellActionDelegate: class {
+    
+    func didTap(on cell: PhotoCell)
+    func didLongPress(on cell: PhotoCell)
+    
 }

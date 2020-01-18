@@ -22,12 +22,27 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n6G-CR-TPQ">
                                 <rect key="frame" x="0.0" y="0.0" width="194" height="138"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKS-pO-77b" customClass="TapFeedbackButton" customModule="Verb_Challenge" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="194" height="138"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="scaleFactor">
+                                        <real key="value" value="0.90000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="customFeedbackViews" destination="vEm-6W-dDX" collectionClass="NSMutableArray" id="Vsl-mG-dcf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.40443441901323945" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="KKS-pO-77b" secondAttribute="trailing" id="1z7-Ld-xZk"/>
+                            <constraint firstItem="KKS-pO-77b" firstAttribute="top" secondItem="vEm-6W-dDX" secondAttribute="top" id="D4P-Mk-0rU"/>
+                            <constraint firstAttribute="bottom" secondItem="KKS-pO-77b" secondAttribute="bottom" id="Eb7-Zg-7Jb"/>
                             <constraint firstItem="n6G-CR-TPQ" firstAttribute="top" secondItem="vEm-6W-dDX" secondAttribute="top" id="Skg-gt-rWY"/>
                             <constraint firstItem="n6G-CR-TPQ" firstAttribute="leading" secondItem="vEm-6W-dDX" secondAttribute="leading" id="iF4-RA-Iev"/>
                             <constraint firstAttribute="bottom" secondItem="n6G-CR-TPQ" secondAttribute="bottom" id="lqS-Ox-UN6"/>
+                            <constraint firstItem="KKS-pO-77b" firstAttribute="leading" secondItem="vEm-6W-dDX" secondAttribute="leading" id="o5v-Wf-LMh"/>
                             <constraint firstAttribute="trailing" secondItem="n6G-CR-TPQ" secondAttribute="trailing" id="ywr-xZ-gUl"/>
                         </constraints>
                     </view>
@@ -43,6 +58,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="194" height="138"/>
             <connections>
+                <outlet property="actionButton" destination="KKS-pO-77b" id="Or1-Ry-Zpw"/>
                 <outlet property="imageView" destination="n6G-CR-TPQ" id="0nt-GS-LmR"/>
             </connections>
             <point key="canvasLocation" x="120.28985507246378" y="84.375"/>

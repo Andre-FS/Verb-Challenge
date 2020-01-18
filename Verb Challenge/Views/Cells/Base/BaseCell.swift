@@ -12,7 +12,7 @@ class BaseCell: UICollectionViewCell {
     
     // MARK: - Internal
     
-    func setupWithContent(_ content: Any, animated: Bool = false) {
+    func setupWithContent(_ content: Any) {
     }
     
 }

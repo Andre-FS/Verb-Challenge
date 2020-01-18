@@ -10,17 +10,20 @@ import Foundation
 
 class Flickr {
     
+    // MARK: - Properties
+    
     let hostname = "https://www.flickr.com"
     let apiKey = "7959f38994c7b5125367ee852fb863f9"
     
     enum APIMethod {
-        case getRecentPhotos
+        case getVacationPhotos
         
         func parameters() -> [String: Any] {
             
             switch self {
-            case .getRecentPhotos:
-                return ["method": "flickr.photos.getRecent",
+            case .getVacationPhotos:
+                return ["method": "flickr.photos.search",
+                        "tags": "vacation",
                         "format": "json",
                         "nojsoncallback": "1",
                         "api_key": "7959f38994c7b5125367ee852fb863f9"]
@@ -31,7 +34,7 @@ class Flickr {
         func path() -> String {
             
             switch self {
-            case .getRecentPhotos:
+            case .getVacationPhotos:
                 return "/services/rest"
             }
             

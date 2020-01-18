@@ -12,12 +12,13 @@ class PhotoDetailViewModel {
     
     // MARK: - Properties
     
-    let photoModel: PhotoCellViewModel
+    let photo: Photo
     
     
     // MARK: - Init
     
-    init(photoModel: PhotoCellViewModel) {
-        self.photoModel = photoModel
+    init(photo: Photo) {
+        self.photo = photo
     }
+    
 }

@@ -27,9 +27,9 @@ class HomeService {
     
     // MARK: - Internal
     
-    func getRecentPhotos(completion: @escaping PhotosResponseHandler) -> HTTPManagerTask {
+    func getVacationPhotos(completion: @escaping PhotosResponseHandler) -> HTTPManagerTask {
         
-        let method = Flickr.APIMethod.getRecentPhotos
+        let method = Flickr.APIMethod.getVacationPhotos
         let configuration = ServerRequestConfig(method: .GET,
                                                 path: networkLayer.fullPathFor(path: method.path()),
                                                 parameters: method.parameters())
