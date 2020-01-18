@@ -103,6 +103,7 @@ class HomeViewController: UIViewController {
         self.collectionViewFlowLayout.minimumLineSpacing = CollectionLineSpacing
         
         setupPullToRefresh()
+        setupInitialAnimation()
         
     }
     
@@ -112,6 +113,17 @@ class HomeViewController: UIViewController {
         refreshControl.tintColor = UIColor(named: "ActivityIndicatorColor")
         self.collectionView.refreshControl = refreshControl
         self.collectionView.refreshControl?.addTarget(self, action: #selector(refreshControlDidPull), for: .valueChanged)
+        
+    }
+    
+    private func setupInitialAnimation() {
+        
+        self.collectionView.rx.willDisplayCell
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                self?.layoutUpdater.applyDisplayAnimationIfNeededTo(cell: $0.cell, at: $0.at)
+            })
+            .disposed(by: self.disposeBag)
         
     }
     

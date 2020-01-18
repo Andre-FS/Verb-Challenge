@@ -31,6 +31,7 @@
 		B650295D23D2155300B248B8 /* PhotoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650295C23D2155300B248B8 /* PhotoDetailViewModel.swift */; };
 		B6676E0A23D1E7AF00B36137 /* FlickrPhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6676E0923D1E7AF00B36137 /* FlickrPhotoResponse.swift */; };
 		B6676E0E23D1EA7800B36137 /* FlickrPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6676E0D23D1EA7800B36137 /* FlickrPhoto.swift */; };
+		B67F730723D348CC00712DCE /* UIView+StandardAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67F730623D348CC00712DCE /* UIView+StandardAnimations.swift */; };
 		B682EF8623D1BC0D00F4F50D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF8523D1BC0D00F4F50D /* AppDelegate.swift */; };
 		B682EF8823D1BC0D00F4F50D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF8723D1BC0D00F4F50D /* SceneDelegate.swift */; };
 		B682EF8A23D1BC0D00F4F50D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF8923D1BC0D00F4F50D /* HomeViewController.swift */; };
@@ -98,6 +99,7 @@
 		B650295C23D2155300B248B8 /* PhotoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModel.swift; sourceTree = "<group>"; };
 		B6676E0923D1E7AF00B36137 /* FlickrPhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhotoResponse.swift; sourceTree = "<group>"; };
 		B6676E0D23D1EA7800B36137 /* FlickrPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhoto.swift; sourceTree = "<group>"; };
+		B67F730623D348CC00712DCE /* UIView+StandardAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+StandardAnimations.swift"; sourceTree = "<group>"; };
 		B682EF8223D1BC0D00F4F50D /* Verb Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Verb Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B682EF8523D1BC0D00F4F50D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B682EF8723D1BC0D00F4F50D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -450,8 +452,9 @@
 		B68C70FA23D2476A00579BCD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B68C70FB23D2477C00579BCD /* UIView+LoadFromNIB.swift */,
 				B68C70FD23D2487B00579BCD /* UIView+Constraints.swift */,
+				B68C70FB23D2477C00579BCD /* UIView+LoadFromNIB.swift */,
+				B67F730623D348CC00712DCE /* UIView+StandardAnimations.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -671,6 +674,7 @@
 				B682EF8A23D1BC0D00F4F50D /* HomeViewController.swift in Sources */,
 				B68C70FE23D2487B00579BCD /* UIView+Constraints.swift in Sources */,
 				B640262723D1CA1600F107CD /* ServerRequestMaker.swift in Sources */,
+				B67F730723D348CC00712DCE /* UIView+StandardAnimations.swift in Sources */,
 				B650295823D212C900B248B8 /* PhotoDetailViewController.swift in Sources */,
 				B68C70ED23D2256F00579BCD /* StorablePhoto.swift in Sources */,
 				B682EF8623D1BC0D00F4F50D /* AppDelegate.swift in Sources */,

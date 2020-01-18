@@ -15,6 +15,7 @@ class HomeLayoutUpdater {
     private var collectionView: UICollectionView!
     private var activityIndicator: UIActivityIndicatorView!
     private var offlineIndicator: OfflineIndicator!
+    private var hasAnimatedIn = false
     
     
     // MARK: - Setup
@@ -60,26 +61,37 @@ class HomeLayoutUpdater {
     
     func updateOfflineIndicator(for state: HomeDataState) {
         
-        UIView.animate(withDuration: 0.6,
-                       delay: 0.1,
-                       usingSpringWithDamping: 0.7,
-                       initialSpringVelocity: 0,
-                       options: [.beginFromCurrentState],
-                       animations: ({
-                        
-                        if [HomeDataState.offline, HomeDataState.error].contains(state) {
-                            
-                            self.offlineIndicator.alpha = 1
-                            self.offlineIndicator.transform = .identity
-                            
-                        } else {
-                            
-                            self.offlineIndicator.alpha = 0
-                            self.offlineIndicator.transform = CGAffineTransform(translationX: self.offlineIndicator.bounds.width, y: 0)
-                            
-                        }
-                        
-                       }))
+        UIView.standardAnimation(animations: {
+            
+            if [HomeDataState.offline, HomeDataState.error].contains(state) {
+                
+                self.offlineIndicator.alpha = 1
+                self.offlineIndicator.transform = .identity
+                
+            } else {
+                
+                self.offlineIndicator.alpha = 0
+                self.offlineIndicator.transform = CGAffineTransform(translationX: self.offlineIndicator.bounds.width, y: 0)
+                
+            }
+            
+        })
+        
+    }
+    
+    func applyDisplayAnimationIfNeededTo(cell: UICollectionViewCell, at indexPath: IndexPath) {
+        
+        guard !self.hasAnimatedIn else {
+            return
+        }
+        
+        let delay = TimeInterval(indexPath.row) * 0.04
+        
+        cell.standardAnimationFromTransform(CGAffineTransform(translationX: 0, y: 20),
+                                            delay: delay,
+                                            completion: { _ in
+                                                self.hasAnimatedIn = true
+        })
         
     }
     
