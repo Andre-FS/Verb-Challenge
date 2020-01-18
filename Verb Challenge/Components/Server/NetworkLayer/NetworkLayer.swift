@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PMHTTP
 
 class NetworkLayer {
     
@@ -24,6 +25,17 @@ class NetworkLayer {
     
     
     // MARK: - Internal
+    
+    func get(method: Flickr.APIMethod, completionHandler: @escaping ServerResponseHandler) -> HTTPManagerTask {
+        
+        let method = Flickr.APIMethod.getVacationPhotos
+        let configuration = ServerRequestConfig(method: .GET,
+                                                path: self.fullPathFor(path: method.path()),
+                                                parameters: method.parameters())
+        
+        return self.requestMaker.request(configuration: configuration, completionHandler: completionHandler)
+        
+    }
     
     func fullPathFor(path: String) -> String {
         return self.hostname.appending(path)

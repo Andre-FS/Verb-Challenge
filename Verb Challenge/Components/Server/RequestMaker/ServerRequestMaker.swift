@@ -9,6 +9,8 @@
 import Foundation
 import PMHTTP
 
+private let TimeoutInterval: TimeInterval = 10
+
 typealias ServerResponseHandler = (Result<Data, Error>) -> Void
 
 class ServerRequestMaker {
@@ -18,7 +20,7 @@ class ServerRequestMaker {
     func request(configuration: ServerRequestConfig, completionHandler: @escaping ServerResponseHandler) -> HTTPManagerTask {
         
         let request = HTTP.request(GET: configuration.path, parameters: configuration.parameters)!
-        request.timeoutInterval = 10
+        request.timeoutInterval = TimeoutInterval
         
         let task = request.performRequest(withCompletionQueue: .main) { _, result in
             switch result {

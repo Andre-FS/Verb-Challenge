@@ -26,9 +26,10 @@ class HomeViewController: UIViewController {
     
     // MARK: - Properties
     
-    let viewModel: HomeViewModel
-    let disposeBag = DisposeBag()
-    weak var navigationDelegate: CoordinatorNavigationDelegate?
+    private let viewModel: HomeViewModel
+    private let disposeBag = DisposeBag()
+    private let layoutUpdater = HomeLayoutUpdater()
+    weak private var navigationDelegate: CoordinatorNavigationDelegate?
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
@@ -79,6 +80,15 @@ class HomeViewController: UIViewController {
         self.title = NSLocalizedString("Home.Title", comment: "")
         
         setupCollectionView()
+        setupLayoutUpdater()
+        
+    }
+    
+    private func setupLayoutUpdater() {
+        
+        self.layoutUpdater.setupWith(collectionView: self.collectionView,
+                                     activityIndicator: self.activityIndicator,
+                                     offlineIndicator: self.offlineIndicator)
         
     }
     
@@ -104,6 +114,20 @@ class HomeViewController: UIViewController {
         self.collectionView.refreshControl?.addTarget(self, action: #selector(refreshControlDidPull), for: .valueChanged)
         
     }
+    
+    private func retryFromOfflineMode() {
+        
+        self.layoutUpdater.updateViewVisibility(for: .loading)
+        self.layoutUpdater.updateOfflineIndicator(for: .loading)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.viewModel.triggerPhotoUpdate()
+        }
+        
+    }
+    
+    
+    // MARK: - Bindings
     
     private func setupBindings() {
         
@@ -145,69 +169,11 @@ class HomeViewController: UIViewController {
         
     }
     
-    private func updateLayout(for state: HomeDataState) {
-        
-        updateViewVisibility(for: state)
-        updateOfflineIndicator(for: state)
-        
-    }
-    
-    private func updateViewVisibility(for state: HomeDataState) {
-        
-        UIView.animate(withDuration: 0.3) {
-            
-            switch state {
-            case .success, .offline:
-                self.activityIndicator.stopAnimating()
-                self.collectionView.alpha = 1
-                self.collectionView.refreshControl?.endRefreshing()
-                
-            case .loading:
-                if self.collectionView.refreshControl?.isRefreshing != true {
-                    self.activityIndicator.startAnimating()
-                    self.collectionView.alpha = 0
-                }
-                
-            case .error:
-                self.activityIndicator.stopAnimating()
-                self.collectionView.alpha = 0
-                self.collectionView.refreshControl?.endRefreshing()
-            }
-            
-        }
-        
-    }
-    
-    private func updateOfflineIndicator(for state: HomeDataState) {
-        
-        UIView.animate(withDuration: 0.6,
-                       delay: 0.1,
-                       usingSpringWithDamping: 0.7,
-                       initialSpringVelocity: 1,
-                       options: [.beginFromCurrentState],
-                       animations: ({
-                        
-                        if [HomeDataState.offline, HomeDataState.error].contains(state) {
-                            
-                            self.offlineIndicator.alpha = 1
-                            self.offlineIndicator.transform = .identity
-                            
-                        } else {
-                            
-                            self.offlineIndicator.alpha = 0
-                            self.offlineIndicator.transform = CGAffineTransform(translationX: self.offlineIndicator.bounds.width, y: 0)
-                            
-                        }
-                        
-                       }))
-        
-    }
-    
     private func setupCollectionViewTapBindings() {
         
         self.collectionView.rx.itemSelected
             .subscribeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] (indexPath) in
+            .subscribe(onNext: { [weak self] indexPath in
                 self?.navigateToPhoto(with: indexPath)
             })
             .disposed(by: self.disposeBag)
@@ -217,11 +183,24 @@ class HomeViewController: UIViewController {
     private func setupOfflineIndicatorBindings() {
         
         self.offlineIndicator.actionButton.rx.tap
-            .subscribe { _ in
-                self.viewModel.triggerPhotoUpdate()
+            .subscribe { [weak self] _ in
+                self?.retryFromOfflineMode()
         }.disposed(by: self.disposeBag)
         
     }
+    
+    
+    // MARK: - UI Updates
+    
+    private func updateLayout(for state: HomeDataState) {
+        
+        self.layoutUpdater.updateViewVisibility(for: state)
+        self.layoutUpdater.updateOfflineIndicator(for: state)
+        
+    }
+    
+    
+    // MARK: - Navigation Redirection
     
     private func navigateToPhoto(with indexPath: IndexPath) {
         self.navigationDelegate?.navigateToPhotoDetail(with: self.viewModel.rawPhotoData[indexPath.row], from: self)
@@ -235,7 +214,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: PhotoCellActionDelegate {
     
-    // MARK: - Internal
+    // MARK: - PhotoCellActionDelegate
     
     func didTap(on cell: PhotoCell) {
         

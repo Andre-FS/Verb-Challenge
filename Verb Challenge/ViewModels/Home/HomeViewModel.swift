@@ -44,7 +44,7 @@ class HomeViewModel {
             
             switch $0 {
             case let .success(photos):
-                self?.handlePhotos(photos)
+                self?.handlePhotoLoadingSuccess(photos)
                 
             case let .failure(error):
                 self?.handlePhotoLoadingError(error)
@@ -62,7 +62,7 @@ class HomeViewModel {
         return photos.compactMap({ $0.url }).map { PhotoCellViewModel(url: $0) }
     }
     
-    private func handlePhotos(_ photos: [Photo]) {
+    private func handlePhotoLoadingSuccess(_ photos: [Photo]) {
         
         self.rawPhotoData = photos
         self.photoStorage.storePhotos(photos.compactMap({ $0.url }).map { StorablePhoto(url: $0) })

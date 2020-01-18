@@ -29,12 +29,7 @@ class HomeService {
     
     func getVacationPhotos(completion: @escaping PhotosResponseHandler) -> HTTPManagerTask {
         
-        let method = Flickr.APIMethod.getVacationPhotos
-        let configuration = ServerRequestConfig(method: .GET,
-                                                path: networkLayer.fullPathFor(path: method.path()),
-                                                parameters: method.parameters())
-        
-        return networkLayer.requestMaker.request(configuration: configuration, completionHandler: {
+        return networkLayer.get(method: Flickr.APIMethod.getVacationPhotos, completionHandler: {
             
             switch $0 {
             case let .success(data):

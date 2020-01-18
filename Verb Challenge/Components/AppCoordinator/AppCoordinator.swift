@@ -13,7 +13,7 @@ class AppCoordinator: CoordinatorNavigationDelegate {
     
     // MARK: - Properties
     
-    var navigationController: UINavigationController!
+    private var navigationController: UINavigationController!
     
     
     // MARK: - Internal
@@ -25,6 +25,7 @@ class AppCoordinator: CoordinatorNavigationDelegate {
         let photoStorage = PhotoStorage()
         
         let homeViewModel = HomeViewModel(networkLayer: networkLayer, photoStorage: photoStorage)
+        
         guard let homeViewController = HomeViewController.instantiateFromStoryboard(creator: {
             return HomeViewController(coder: $0, viewModel: homeViewModel, navigationDelegate: self)
         }) else {

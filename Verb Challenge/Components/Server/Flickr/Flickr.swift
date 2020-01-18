@@ -13,7 +13,7 @@ class Flickr {
     // MARK: - Properties
     
     let hostname = "https://www.flickr.com"
-    let apiKey = "7959f38994c7b5125367ee852fb863f9"
+    static let apiKey = "7959f38994c7b5125367ee852fb863f9"
     
     enum APIMethod {
         case getVacationPhotos
@@ -26,7 +26,7 @@ class Flickr {
                         "tags": "vacation",
                         "format": "json",
                         "nojsoncallback": "1",
-                        "api_key": "7959f38994c7b5125367ee852fb863f9"]
+                        "api_key": Flickr.apiKey]
             }
             
         }

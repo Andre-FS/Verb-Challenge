@@ -17,7 +17,7 @@ extension UIView {
         let nib = UINib(nibName: String(describing: self.classForCoder), bundle: Bundle(for: self.classForCoder))
         
         guard let view = nib.instantiate(withOwner: self, options: nil).first as? T else {
-            fatalError("⚠️ unable to instantiate NIB while type-casting to \(String(describing: self))")
+            fatalError("⚠️ Unable to instantiate NIB while type-casting to \(String(describing: self))")
         }
         
         return view

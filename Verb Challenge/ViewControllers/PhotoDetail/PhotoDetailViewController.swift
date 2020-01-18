@@ -80,7 +80,7 @@ class PhotoDetailViewController: UIViewController {
         self.scrollView.minimumZoomScale = 1
         self.scrollView.zoomScale = 1
         
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(photoDidTap))
         tapRecognizer.numberOfTapsRequired = 2
         
         self.scrollView.addGestureRecognizer(tapRecognizer)
@@ -98,7 +98,7 @@ class PhotoDetailViewController: UIViewController {
     // MARK: - Actions
     
     @objc
-    func photoDidLongPress(_ sender: UIGestureRecognizer) {
+    private func photoDidLongPress(_ sender: UIGestureRecognizer) {
         
         if sender.state == .began {
             
@@ -109,19 +109,27 @@ class PhotoDetailViewController: UIViewController {
             
     }
     
+    @objc
+    private func photoDidTap() {
+        self.toggleZoomLevel()
+    }
+    
     @IBAction func closeButtonDidTap(_ sender: Any) {
         self.navigationDelegate?.dismiss(from: self)
     }
     
+    
     // MARK: - Private
     
-    @objc
-    private func handleTap() {
+    private func toggleZoomLevel() {
         
         if self.scrollView.zoomScale > self.scrollView.minimumZoomScale {
             self.scrollView.setZoomScale(self.scrollView.minimumZoomScale, animated: true)
         } else {
-            self.scrollView.setZoomScale((self.scrollView.minimumZoomScale + self.scrollView.maximumZoomScale) / 2, animated: true)
+            
+            let midZoom = (self.scrollView.minimumZoomScale + self.scrollView.maximumZoomScale) / 2
+            self.scrollView.setZoomScale(midZoom, animated: true)
+            
         }
         
     }
