@@ -58,10 +58,6 @@ class HomeViewModel {
     
     // MARK: - Private
     
-    private func photoCellViewModels(from photos: [Photo]) -> [PhotoCellViewModel] {
-        return photos.compactMap({ $0.url }).map { PhotoCellViewModel(url: $0) }
-    }
-    
     private func handlePhotoLoadingSuccess(_ photos: [Photo]) {
         
         self.rawPhotoData = photos
@@ -76,19 +72,15 @@ class HomeViewModel {
         
         let storedPhotos = self.photoStorage.retrievePhotos()
         
-        if storedPhotos.isEmpty {
-            
-            self.homeData.onNext([])
-            self.dataStatus.onNext(.error)
-            
-        } else {
-            
-            self.rawPhotoData = storedPhotos
-            self.homeData.onNext(self.photoCellViewModels(from: storedPhotos))
-            self.dataStatus.onNext(.offline)
-            
-        }
+        self.rawPhotoData = storedPhotos
+        self.homeData.onNext(self.photoCellViewModels(from: storedPhotos))
         
+        self.dataStatus.onNext(storedPhotos.isEmpty ? .error : .offline)
+        
+    }
+    
+    private func photoCellViewModels(from photos: [Photo]) -> [PhotoCellViewModel] {
+        return photos.compactMap({ $0.url }).map { PhotoCellViewModel(url: $0) }
     }
     
 }
