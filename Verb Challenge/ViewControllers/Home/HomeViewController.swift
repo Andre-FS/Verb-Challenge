@@ -85,6 +85,7 @@ class HomeViewController: UIViewController {
     private func setupCollectionView() {
         
         self.collectionView.register(cellClass: PhotoCell.self)
+        self.collectionView.indicatorStyle = .white
         
         let cellWidth = floor((self.view.frame.width - ((ItemsPerRow - 1) * CollectionInteritemSpacing)) / ItemsPerRow)
         self.collectionViewFlowLayout.itemSize = CGSize(width: cellWidth, height: cellWidth)

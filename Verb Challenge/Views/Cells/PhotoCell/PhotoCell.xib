@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="194" height="138"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="scaleFactor">
-                                        <real key="value" value="0.90000000000000002"/>
+                                        <real key="value" value="0.93999999999999995"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
