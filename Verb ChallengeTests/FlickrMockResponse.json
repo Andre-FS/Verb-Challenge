@@ -1,0 +1,8 @@
+{ "photos": { "page": 1, "pages": "1", "perpage": 6, "total": "6", 
+    "photo": [
+      { "id": "49403631676", "owner": "79042256@N05", "secret": "b5552f1a23", "server": "65535", "farm": 66, "title": "Warsaw Uprising street art on Mazowiecka Street", "ispublic": 1, "isfriend": 0, "isfamily": 0 },
+      { "id": "49403150868", "owner": "79042256@N05", "secret": "dfa3e4a05d", "server": "65535", "farm": 66, "title": "Warsaw Uprising street art on Mazowiecka Street", "ispublic": 1, "isfriend": 0, "isfamily": 0 },
+      { "id": "49403612466", "owner": "79042256@N05", "secret": "88a784008e", "server": "65535", "farm": 66, "title": "Warsaw Uprising street art on Mazowiecka Street", "ispublic": 1, "isfriend": 0, "isfamily": 0 },
+      { "id": "49403127723", "owner": "79042256@N05", "secret": "85c8923372", "server": "65535", "farm": 66, "title": "Warsaw Uprising street art on Mazowiecka Street", "ispublic": 1, "isfriend": 0, "isfamily": 0 },
+      { "id": "49403120498", "owner": "79042256@N05", "secret": "68881c3c6d", "server": "65535", "farm": 66, "title": "Warsaw Uprising street art on Mazowiecka Street", "ispublic": 1, "isfriend": 0, "isfamily": 0 }
+    ] }, "stat": "ok" }

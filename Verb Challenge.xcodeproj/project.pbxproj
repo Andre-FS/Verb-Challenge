@@ -32,6 +32,7 @@
 		B6676E0A23D1E7AF00B36137 /* FlickrPhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6676E0923D1E7AF00B36137 /* FlickrPhotoResponse.swift */; };
 		B6676E0E23D1EA7800B36137 /* FlickrPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6676E0D23D1EA7800B36137 /* FlickrPhoto.swift */; };
 		B67F730723D348CC00712DCE /* UIView+StandardAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67F730623D348CC00712DCE /* UIView+StandardAnimations.swift */; };
+		B67F730923D351D900712DCE /* FlickrMockResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = B67F730823D351D900712DCE /* FlickrMockResponse.json */; };
 		B682EF8623D1BC0D00F4F50D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF8523D1BC0D00F4F50D /* AppDelegate.swift */; };
 		B682EF8823D1BC0D00F4F50D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF8723D1BC0D00F4F50D /* SceneDelegate.swift */; };
 		B682EF8A23D1BC0D00F4F50D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682EF8923D1BC0D00F4F50D /* HomeViewController.swift */; };
@@ -100,6 +101,7 @@
 		B6676E0923D1E7AF00B36137 /* FlickrPhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhotoResponse.swift; sourceTree = "<group>"; };
 		B6676E0D23D1EA7800B36137 /* FlickrPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhoto.swift; sourceTree = "<group>"; };
 		B67F730623D348CC00712DCE /* UIView+StandardAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+StandardAnimations.swift"; sourceTree = "<group>"; };
+		B67F730823D351D900712DCE /* FlickrMockResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FlickrMockResponse.json; sourceTree = "<group>"; };
 		B682EF8223D1BC0D00F4F50D /* Verb Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Verb Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B682EF8523D1BC0D00F4F50D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B682EF8723D1BC0D00F4F50D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -350,8 +352,9 @@
 		B682EF9B23D1BC0F00F4F50D /* Verb ChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				B682EF9C23D1BC0F00F4F50D /* Verb_ChallengeTests.swift */,
+				B67F730823D351D900712DCE /* FlickrMockResponse.json */,
 				B682EF9E23D1BC0F00F4F50D /* Info.plist */,
+				B682EF9C23D1BC0F00F4F50D /* Verb_ChallengeTests.swift */,
 			);
 			path = "Verb ChallengeTests";
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B67F730923D351D900712DCE /* FlickrMockResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
