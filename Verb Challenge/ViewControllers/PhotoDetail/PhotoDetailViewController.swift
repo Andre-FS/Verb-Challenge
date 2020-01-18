@@ -109,6 +109,10 @@ class PhotoDetailViewController: UIViewController {
             
     }
     
+    @IBAction func closeButtonDidTap(_ sender: Any) {
+        self.navigationDelegate?.dismiss(from: self)
+    }
+    
     // MARK: - Private
     
     @objc

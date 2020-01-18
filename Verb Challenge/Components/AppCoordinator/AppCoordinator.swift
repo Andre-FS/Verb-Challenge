@@ -62,11 +62,16 @@ class AppCoordinator: CoordinatorNavigationDelegate {
         
     }
     
+    func dismiss(from viewController: UIViewController) {
+        viewController.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 protocol CoordinatorNavigationDelegate: class {
     
     func navigateToPhotoDetail(with photo: Photo, from viewController: UIViewController)
     func share(photo: Photo, from viewController: UIViewController)
+    func dismiss(from viewController: UIViewController)
     
 }
